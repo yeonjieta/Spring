@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+	table {
+			border-collapse: collapse;
+			text-align: center;
+			}
+	table  tr  th {
+		border: 1px solid black;
+		padding: 10px;
+		background-color: skyblue;
+
+	}
+	table tr td {
+		border: 1px solid black;
+		padding: 10px;
+	}
+	#boardOne {
+		text-align: center;
+	}
+	#boardOne > #content {
+		border: 1px solid black;
+		width: 200px;
+		height: 200px;
+		margin-left: 605px;
+		margin-bottom: 20px
+	}
+	hr {
+		width: 200px;
+	}
+	#writer {
+		font-size: small;
+		font-weight: bold;
+	}
