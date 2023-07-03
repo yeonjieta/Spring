@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+		 "-//mybatis.org//DTD Mapper 3.0//EN" 
+		 "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+		 
+<!-- namespace : DAO인터페이스의 풀네임. 패키지부터 인터페이스이름까지 모두 작성한다 -->
+<mapper namespace="com.itbank.repository.TestDAO">
+
+		<!-- id : 인터페이스에 선언도니 메서드의 이름 -->
+		<!-- resultType : 반환자료형 -->
+		<!--  parameterType : 매개변수자료형 -->
+		
+		<select id="selectVersion" resultType="string">
+				select banner from v$version
+		</select>
+		
+		<select id="selectSysdate" resultType="java.sql.Date">
+			select sysdate from dual
+		</select>
+			
+<!-- 			원래 이렇게 써야하는데 config에서 별명을 지정해줘서 밑에처럼 간편하게 쓰면된다. -->
+<!-- 		<select id="selectYoutubeList" resultType="com.itbank.model.TestDTO"> -->
+<!-- 			select * from youtube_list order by idx -->
+<!-- 		</select> -->
+		<select id="selectYoutubeList" resultType="test"> 
+			select * from youtube_list order by idx
+		</select>
+
+	
+</mapper>

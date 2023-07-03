@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC
+		"-//mybatis.org//DTD Config 3.0//EN"
+		"https://mybatis.org/dtd/mybatis-3-config.dtd">
+		
+<configuration>
+		<settings>
+				<setting name="cacheEnabled" value="false" />
+				<setting name="useGeneratedKeys" value="false"/>
+				<setting name="mapUnderscoreToCamelCase" value="false"/>
+		</settings>
+		
+<!-- 		자료형에대한 별명을 지정할 수 있고 그걸 mapper.xml에 resultType에서 그걸 쓸 수 있다. -->
+		<typeAliases>
+					<typeAlias type="com.itbank.model.TestDTO" alias="test"/>
+					<typeAlias type="com.itbank.model.YoutubeDTO" alias="youtube"/>
+		</typeAliases>
+</configuration>

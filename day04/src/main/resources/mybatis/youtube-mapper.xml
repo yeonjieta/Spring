@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+		 "-//mybatis.org//DTD Mapper 3.0//EN" 
+		 "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+		 
+<mapper namespace="com.itbank.repository.YoutubeDAO">
+<!--  full name 다 적어줘야함 -->
+
+	<select id="selectList" resultType="youtube">
+			select * from youtube_list order by idx
+	</select>
+
+	<!--  executeUpdate() => int / insert, update, delete는 반환형이 int로 고정이므로 작성하지 않는다.  들어오는건 parameter type-->
+	<insert id="insert" parameterType="youtube">
+		insert into youtube_list
+				(title, channel, thumbnail, iframe)
+			values (
+				#{title},
+				#{channel},
+				#{thumbnail},
+				#{iframe}
+			)
+	</insert>
+
+	<select id="selectOne" parameterType="int" resultType="youtube">
+		select * from youtube_list
+			where
+				idx = #{idx}
+	</select>
+	
+	<delete id="delete" parameterType="int">
+			delete from youtube_list where idx=#{idx}
+	</delete>
+	
+	<update id="update" parameterType="youtube">
+			update youtube_list 
+				<set>
+				 <if test="title != ''">title = #{title}, </if>
+				 channel = #{channel}, 
+				 thumbnail = #{thumbnail}, 
+				 iframe = #{iframe},
+				 </set>
+				 where 
+				 	idx = #{idx}
+	</update>
+</mapper>

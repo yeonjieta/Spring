@@ -51,12 +51,8 @@ public class BoardController {
 
 	@PostMapping("/add")
 	public String add(BoardDTO dto) {
-		int row = boardService.insert(dto);
-		if(row != 0) {
-			return "redirect:/list";
-		} else {
-			return "redirect:/add";
-		}
+		boardService.insert(dto);
+		return "redirect:/list/";
 	}
 
 	@GetMapping("/modify/{idx}")
@@ -69,7 +65,7 @@ public class BoardController {
 
 	@PostMapping("/modify/{idx}")
 	public String modify(BoardDTO dto) {
-		int row = boardService.update(dto);
+		boardService.update(dto);
 		return "redirect:/view/" + dto.getIdx();
 	}
 	

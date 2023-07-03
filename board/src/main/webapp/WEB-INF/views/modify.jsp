@@ -9,7 +9,7 @@
 		<p><input type="text" name="writer" value="${dto.writer }" readonly></p>
 		<p><input type="date" name="writeDate" value="${dto.writeDate }" readonly></p>
 		<p><textarea name="content" value="${dto.content }"></textarea></p>
-		<p><input type="submit"</p>
+		<p><input type="submit"></p>
 		</form>
 </body>
 </html>
