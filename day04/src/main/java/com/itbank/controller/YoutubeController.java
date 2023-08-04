@@ -20,11 +20,11 @@ public class YoutubeController {
 
 	@Autowired private YoutubeService youtubeService;
 	
-	@GetMapping("/list")
+	@GetMapping("/list") // 해당 컨트롤러의 list() 메서드가 처리하는 URL 경로
 	public ModelAndView list() {
 		ModelAndView mav = new ModelAndView();
 		List<YoutubeDTO> list = youtubeService.selectList();
-		mav.addObject("list", list);
+		mav.addObject("list", list); //Model에 저장되는 데이터(JSP 파일에서 참조하는 데이터)
 		return mav;
 	}
 	
