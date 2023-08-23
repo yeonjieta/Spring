@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+		"-//mybatis.org//DTD Mapper 3.0//EN"
+		"https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+		
+<mapper namespace="com.itbank.repository.GocampReviewDAO">
+
+	
+<!-- 		<select id="selectAll" resultType="gocampreview" parameterType="paging"> -->
+<!-- 			select * from gocampReview	 -->
+<!-- 				order by  -->
+<!-- 					idx desc  -->
+<!-- 				offset #{offset} rows -->
+<!-- 				fetch next #{perPage} rows only -->
+<!-- 		</select> -->
+		
+		<insert id="writeReview" parameterType="gocampreview">
+			insert into gocampReview 
+				(writer,review_content, gocamp_board)
+					values (#{writer},#{review_content},#{gocamp_board})
+		</insert>
+		
+		<select id="getReview" parameterType="String" resultType="gocampreview">
+			select gr.* from gocampReview gr join gocamp gc 
+				on gc.contentId = gr.gocamp_board where gc.contentId = #{contentId}
+		</select>
+		
+		
+</mapper>
+		
